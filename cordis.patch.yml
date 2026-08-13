@@ -1,0 +1,15 @@
+# dsh-claude-marketplace bundle patch: mounts the plugin into a dsh profile
+# composition. The plugin registers `cc_*` tools into the shared `tools`
+# registry for loading Claude Code skills/commands/agents and installing
+# plugins from Claude Code marketplaces.
+#
+# Install: `dsh plugin --profile <name> add dsh-claude-marketplace`
+- insert:
+    - id: claude-marketplace
+      name: dsh-claude-marketplace
+      config:
+        # Where installed Claude Code plugins are cached (default under $DSH_HOME).
+        # cacheDir: ~/.dsh/claude-plugins
+        # Name prefix for skills imported from Claude Code (kebab-case; avoids
+        # collisions with native dsh skills).
+        # skillPrefix: cc
